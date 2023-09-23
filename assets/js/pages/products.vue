@@ -43,7 +43,7 @@
                 </div>
                 <div class="row">
                     <legend-component
-                        title="TODO PUT LEGEND HERE"
+                        :title="legend"
                     />
                 </div>
             </div>
