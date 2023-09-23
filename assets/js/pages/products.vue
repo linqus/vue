@@ -29,35 +29,19 @@
                 </div>
             </aside>
             <div class="col-xs-12 col-9">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>
-                            Products
-                        </h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-6 mb-2 pb-2">
-                        TODO - load some products!
-                    </div>
-                </div>
-                <div class="row">
-                    <legend-component
-                        :title="legend"
-                    />
-                </div>
+                
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import LegendComponent from '../components/legent';
+import CatalogComponent from '../components/catalog';
 
 export default {
     name: 'Products',
     components: {
-        LegendComponent,
+        CatalogComponent,
     },
     data() {
         return {
