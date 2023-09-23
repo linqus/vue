@@ -63,10 +63,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '../../scss/components/light-component';
+
 .sidebar {
-    border: 1px solid #efefee;
-    box-shadow: 0 0 7px 4px #efefee;
-    border-radius: 5px;
+    @include light-component;
+
+    ul {
+        li a:hover {
+            background: $blue-component-link-hover;
+        }
+    }
 }
 </style>
