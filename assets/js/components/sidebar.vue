@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         toggleCollapsed() {
-            console.log('Clicked!');
+            this.collapsed = !this.collapsed;
         },
     },
 };
