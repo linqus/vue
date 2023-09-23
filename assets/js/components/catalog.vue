@@ -21,12 +21,17 @@
 </template>
 
 <script>
-import LegendComponent from '../components/legend';
+import LegendComponent from './legend';
 
 export default {
     name: 'Catalog',
-    components: [
+    components: {
         LegendComponent,
-    ],
+    },
+    data() {
+        return {
+            legend: "Shipping takes 10-12 weeks, and products probably won't work",
+        };
+    },
 };
 </script>
