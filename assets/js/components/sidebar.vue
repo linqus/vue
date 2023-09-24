@@ -27,7 +27,7 @@
                     >{{ category.name }}</a>
                 </li>
             </ul>
-
+            <Loading v-show="loading" />
             <hr>
         </div>
         <div class="d-flex justify-content-end">
@@ -42,9 +42,13 @@
 
 <script>
 import axios from 'axios';
+import Loading from '@/components/loading';
 
 export default {
     name: 'Sidebar',
+    components: {
+        Loading,
+    },
     props: {
         collapsed: {
             type: Boolean,
@@ -59,6 +63,11 @@ export default {
         return {
             categories: [],
         };
+    },
+    computed: {
+        loading() {
+            return this.categories.length === 0;
+        },
     },
     async created() {
         const response = await axios.get('/api/categories');
