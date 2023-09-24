@@ -47,15 +47,12 @@ export default {
     async created() {
         this.loading = true;
 
-        let response;
         try {
-            response = await fetchProducts(this.currentCategoryId);
+            this.products = await fetchProducts(this.currentCategoryId);
             this.loading = false;
         } catch (e) {
             this.loading = false;
-            return;
         }
-        this.products = response.data['hydra:member'];
     },
 };
 </script>
