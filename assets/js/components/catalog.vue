@@ -30,6 +30,12 @@ export default {
         LegendComponent,
         ProductList,
     },
+    props: {
+        currentCategoryId: {
+            type: String,
+            default: null,
+        },
+    },
     data() {
         return {
             products: [],
