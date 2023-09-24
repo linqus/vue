@@ -13,5 +13,5 @@ export function fetchProducts(categoryIri = null) {
 
     return axios.get('/api/products', {
         params,
-    });
+    }).then((response) => response.data['hydra:member']);
 }
