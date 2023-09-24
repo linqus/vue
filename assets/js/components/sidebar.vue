@@ -9,7 +9,7 @@
             <ul class="nav flex-column mb4">
                 <li class="nav-item">
                     <a
-                        :class="`nav-link ${ !currentCategoryId ? $style.selected :'' }`"
+                        :class="`nav-link ${ !currentCategoryId ? 'selected' :'' }`"
                         href="/"
                     >All Products</a>
                 </li>
@@ -21,7 +21,7 @@
                     <a
                         :class="{
                             'nav-link': true,
-                            [$style.selected]: currentCategoryId===category['@id'],
+                            'selected': currentCategoryId===category['@id'],
                         }"
                         :href="`/category/${category.id}`"
                     >{{ category.name }}</a>
@@ -72,7 +72,7 @@ export default {
 <style lang="scss" module>
 @import '~styles/components/light-component';
 
-.component {
+.component :global {
     @include light-component;
 
     ul {
