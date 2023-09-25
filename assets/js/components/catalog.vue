@@ -57,13 +57,20 @@ export default {
             products: [],
             loading: false,
             legend: "Shipping takes 10-12 weeks, and products probably won't work",
+            searchTerm: null,
         };
+    },
+    watch: {
+        currentCategoryId() {
+            this.loadProducts(this.searchTerm);
+        },
     },
     created() {
         this.loadProducts(null);
     },
     methods: {
         onSearchProducts({ term }) {
+            this.searchTerm = term;
             this.loadProducts(term);
         },
         async loadProducts(searchTerm) {
