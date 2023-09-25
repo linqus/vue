@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="input-group">
         <input
             v-model="searchTerm"
             type="search"
@@ -7,6 +7,17 @@
             placeholder="Search Product..."
             @input="onInput"
         >
+        <div
+            v-show="searchTerm !== ''"
+            class="input-group-append"
+        >
+            <button
+                class="btn btn-outline-secondary"
+                @click="clearSearch"
+            >
+                X
+            </button>
+        </div>
     </div>
 </template>
 
@@ -28,6 +39,10 @@ export default {
                 this.$emit('searchTermChanged', { term: this.searchTerm });
                 this.searchTimeout = null;
             }, 200);
+        },
+        clearSearch() {
+            this.searchTerm = '';
+            this.$emit('searchTermChanged', { term: this.searchTerm });
         },
     },
 };
