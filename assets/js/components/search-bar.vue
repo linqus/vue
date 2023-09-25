@@ -5,6 +5,7 @@
             type="search"
             class="form-control"
             placeholder="Search Product..."
+            @input="$emit('searchTermChanged', {term: searchTerm})"
         >
     </div>
 </template>
