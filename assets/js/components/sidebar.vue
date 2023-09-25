@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import { fetchCategories } from '@/services/categories-service';
 import Loading from '@/components/loading';
 
 export default {
@@ -58,20 +57,15 @@ export default {
             type: String,
             default: null,
         },
-    },
-    data() {
-        return {
-            categories: [],
-        };
+        categories: {
+            type: Array,
+            required: true,
+        },
     },
     computed: {
         loading() {
             return this.categories.length === 0;
         },
-    },
-    async created() {
-        const response = await fetchCategories();
-        this.categories = response.data['hydra:member'];
     },
 };
 </script>
